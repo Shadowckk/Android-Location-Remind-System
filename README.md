@@ -5,7 +5,7 @@
 
 本文设计并实现了一款[基于Android的时间与位置服务提醒系统](https://segmentfault.com/a/1190000041962480)——iRemind，它既可以通过用户设定的某个时间进行任务的提醒，也允许用户设定进入或离开某个地点的任务提醒。
 
-本项目源码位于：[https://github.com/Shadowckk/iRemind](https://github.com/Shadowckk/iRemind)
+本项目源码位于：https://github.com/Shadowckk/Android-Location-Remind-System
 
 ## 一、开发环境
 
