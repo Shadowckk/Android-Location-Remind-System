@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddTaskActivity"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/add_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/task"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fab_margin"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:gravity="top"
+            android:hint="输入提醒内容..."
+            android:inputType="textMultiLine"
+            android:maxLines="12"
+            android:minLines="8" />
+
+
+        <Button
+            android:id="@+id/task_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/btn_selector"
+            android:text="@string/choose_time"
+            android:textColor="#ffffff"
+            android:layout_gravity="bottom"
+            />
+
+        <Button
+            android:id="@+id/task_loc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/btn_selector"
+            android:text="选择地点"
+            android:textColor="#ffffff"
+            android:layout_gravity="bottom"
+            />
+
+
+    </LinearLayout>
+
+
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/task_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:backgroundTint="@color/colorPrimary"
+        app:srcCompat="@drawable/ok"
+        app:layout_anchor="@id/add_layout"
+        app:layout_anchorGravity="bottom|right|end"
+        />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

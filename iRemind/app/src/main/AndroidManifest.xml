@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.baidu.baidulocationdemo">
+
+    <!-- 这个权限用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!-- 这个权限用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据-->
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- 访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 允许挂载和反挂载文件系统可移动存储 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- 允许程序读取底层系统日志文件 -->
+    <uses-permission android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- 允许访问振动设备 -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <!-- 允许使用PowerManager的 WakeLocks保持进程在休眠时从屏幕消失 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <!-- 允许程序读取或写入系统设置 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- android 9.0上使用前台服务，需要添加权限 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 读取缓存数据 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 获取模拟定位信息 -->
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"
+        tools:ignore="MockLocation,ProtectedPermissions" />
+
+
+    <application
+        android:name="com.shadowckk.remind.activity.LocationApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="iRemind"
+
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:persistent="true"
+        android:usesCleartextTraffic="true"
+        >
+<!--        android:theme="@style/AppTheme"-->
+<!--        android:theme="@android:style/Theme.Black"-->
+
+        <!-- 声明service组件 -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"/>
+        <!-- AK鉴权 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="1Kgrs3thlmmbfnRlCQGiOy57sGMduIFx" /> <!-- http://lbsyun.baidu.com/apiconsole/key -->
+        <activity
+            android:name="com.shadowckk.remind.activity.MainActivity"
+            android:label="iRemind"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.shadowckk.remind.activity.LocationActivity"/>
+        <activity android:name="com.shadowckk.remind.activity.LocationOption" />
+        <activity android:name="com.shadowckk.remind.activity.LocationFilter" />
+        <activity android:name="com.shadowckk.remind.activity.NotifyActivity" />
+        <activity android:name="com.shadowckk.remind.activity.QuestActivity" />
+        <activity android:name="com.shadowckk.remind.activity.LocationAutoNotify" />
+        <activity android:name="com.shadowckk.remind.activity.IndoorLocationActivity" />
+        <activity android:name="com.shadowckk.remind.activity.ForegroundActivity" />
+        <activity android:name="com.shadowckk.remind.activity.GeoFenceMultipleActivity" />
+        <activity android:name="com.shadowckk.remind.activity.CheckPermissionsActivity" />
+        <activity android:name="com.shadowckk.remind.activity.IsHotWifiActivity" />
+        <activity android:name="com.shadowckk.remind.activity.AssistLocationActivity" />
+        <activity android:name="com.shadowckk.remind.activity.SceneLocationActivity" />
+        <activity android:name="com.shadowckk.remind.activity.SignInSceneActivity" />
+        <activity android:name="com.shadowckk.remind.activity.SportSceneActivity" />
+        <activity android:name="com.shadowckk.remind.activity.TransportSceneActivity" />
+        <activity android:name="com.shadowckk.remind.activity.MockLocationActivity" />
+        <activity android:name="com.shadowckk.remind.activity.LocPreventCheatActivity" />
+<!--        <activity-->
+<!--            android:name="com.baidu.location.demo.LocationNotifyActivity"-->
+<!--            android:label="选择地点"-->
+<!--            android:theme="@style/AppTheme.NoActionBar"-->
+<!--            android:configChanges="keyboardHidden|orientation|screenSize"-->
+<!--            android:windowSoftInputMode="adjustResize|stateHidden" />-->
+
+        <activity
+            android:name="com.shadowckk.remind.activity.LocationNotifyActivity"
+            android:label="选择地点"
+            android:windowSoftInputMode="adjustResize"
+            android:parentActivityName="com.shadowckk.remind.activity.AddTaskActivity"
+            />
+<!--        android:configChanges="keyboardHidden|orientation|screenSize"-->
+<!--        android:windowSoftInputMode="adjustResize|stateHidden"-->
+<!--        android:theme="@style/AppTheme.NoActionBar"-->
+        <activity
+            android:name="com.shadowckk.remind.activity.AddTaskActivity"
+            android:label="@string/title_activity_add_task"
+            android:windowSoftInputMode="adjustResize"
+            android:parentActivityName="com.shadowckk.remind.activity.MainActivity">
+        </activity>
+
+
+        <service
+            android:name="com.shadowckk.remind.service.ClockService"
+            android:enabled="true"
+            android:exported="true">
+
+        </service>
+        <service
+            android:name="com.shadowckk.remind.service.ClockLocService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity
+            android:name="com.shadowckk.remind.activity.ClockActivity"
+            android:launchMode="singleTask"
+            android:label="iRemind"
+            android:theme="@style/FullScreen" />
+
+
+    </application>
+
+</manifest>

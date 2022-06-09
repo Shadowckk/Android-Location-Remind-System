@@ -1,0 +1,7 @@
+output
+.svn
+.gradle/
+.idea/
+*.iml
+build/*
+app/build/*
