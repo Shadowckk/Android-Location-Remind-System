@@ -3,15 +3,19 @@
 
 ## 〇、关于本项目
 本文设计并实现了一款[基于Android的时间与位置服务提醒系统](https://segmentfault.com/a/1190000041962480)——iRemind，它既可以通过用户设定的某个时间进行任务的提醒，也允许用户设定进入或离开某个地点的任务提醒。
+
 本项目源码位于：[https://github.com/Shadowckk/iRemind](https://github.com/Shadowckk/iRemind)
 
 ## 一、开发环境
 Android Studio 版本：4.1.1
+
 SDK版本：Android 11.0 (API 30)
+
 数据库：SQLite
 
 ## 二、使用方法
 ### （1）创建百度地图SDK项目
+
 1. 参考[注册和获取密钥](https://lbsyun.baidu.com/index.php?title=androidsdk/guide/create-project/ak)，获取开发密钥。
 2. 在`AndroidManifest.xml`文件的相应位置填入你的密钥：
 	```xml
@@ -28,12 +32,18 @@ SDK版本：Android 11.0 (API 30)
 项目已实现的功能和未实现的功能如下：
 1. 待办事项管理
 	（1）添加待办事项：用户可点击主界面下方“添加任务”按钮添加待办事项。
+	
 	（2）删除待办事项：用户可将待办事项右滑以删除待办事项。
+	
 	（3）显示待办事项：在主界面可将所有待办事项显示，其中未完成任务排列于已完成任务之前。（使用适配器实现）
+	
 	（4）标记待办事项：用户可点击待办事项左侧复选框，将待办事项进行标记。
+	
 2. 提醒管理
 	（1）基于时间的任务提醒：用户设定基于时间的任务提醒，使其在设定时间进行任务提醒。（使用Padding Intent实现）
+	
 	（2）基于位置的进入提醒：用户设定基于位置的进入提醒，使其在进入提醒范围时进行任务提醒。（使用百度地图定位SDK实现）
+	
 	（3）基于位置的离开提醒：用户设定基于位置的离开提醒，使其在离开提醒范围时进行任务提醒。**（未实现）**
 
 ## 四、系统完善与改进建议
@@ -46,12 +56,12 @@ SDK版本：Android 11.0 (API 30)
 
 ## 五、项目效果
 1. 用户主界面模块
-	![用户主界面模块.gif](https://github.com/Shadowckk/Mask-face-recognition/blob/main/用户主界面模块.gif)
+	![用户主界面模块.gif](用户主界面模块.gif)
 2. 新建待办事项模块
-	![新建待办事项模块.gif](https://github.com/Shadowckk/Mask-face-recognition/blob/main/新建待办事项模块.gif)
+	![新建待办事项模块.gif](新建待办事项模块.gif)
 3. 位置服务模块
-	![位置服务模块.gif](https://github.com/Shadowckk/Mask-face-recognition/blob/main/位置服务模块.gif)
+	![位置服务模块.gif](位置服务模块.gif)
 4. 时间提醒服务模块
-	![时间提醒服务模块.gif](https://github.com/Shadowckk/Mask-face-recognition/blob/main/时间提醒服务模块.gif)
+	![时间提醒服务模块.gif](时间提醒服务模块.gif)
 5. 位置提醒服务模块
-	![位置提醒服务模块.gif](https://github.com/Shadowckk/Mask-face-recognition/blob/main/位置提醒服务模块.gif)
+	![位置提醒服务模块.gif](位置提醒服务模块.gif)
